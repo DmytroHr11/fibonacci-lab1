@@ -9,6 +9,18 @@ def fibonacci(n: int) -> int:
         a, b = b, a + b
     return b
 
+def get_sequence(count: int):
+    """Генерація послідовності перших count чисел Фібоначчі."""
+    if count <= 0:
+        return []
+    seq = [0]
+    if count == 1:
+        return seq
+    seq.append(1)
+    for _ in range(2, count):
+        seq.append(seq[-1] + seq[-2])
+    return seq
+
 def main():
     print("=" * 50)
     print("Програма розрахунку чисел Фібоначчі")
